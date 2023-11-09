@@ -18,7 +18,8 @@ do
 
         # List resources using the RDP rule
         echo "Resources using the default RDP rule:"
-        # gcloud asset search-all-resources --scope=projects/${PROJECT_ID} --sort-by="firewall-policies=default-allow-rdp" --format="table[box](name,zone)" # <-- will seach all resources
+        # gcloud asset search-all-resources --scope=projects/${PROJECT_ID} --sort-by="firewall-policies=default-allow-rdp" --format="table[box](name,zone)" 
+        # ^^ will search all resources
         gcloud compute instances list --project=${PROJECT_ID} --sort-by="firewall-policies=default-allow-rdp" --format="table[box](name,zone)"
     fi
 
